@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+class distances {
+   int meter;
+   int centimeter;
+   public:
+     void operator = (distances & d);
+     void inputdata(){
+        cout<<"Enter distance in meter: ";
+        cin>> meter;
+        cout<<"Enter distance in centimeter: ";
+        cin>>centimeter;
+
+     }
+     void displaydata(){
+        cout<<meter<<" M "<<centimeter<<" cm \n";
+     }
+ };
+ void distances::operator = (distances & d){
+    meter = d.meter;
+ }
+
+ int main(){
+    distances d1,d2;
+    cout<<"Enter first distance: "<<endl;
+    d1.inputdata();
+    cout<<"The first distance: ";
+    d1.displaydata();
+    cout<<"Enter second distance: "<<endl;
+    d2.inputdata();
+    cout<<"The second distance: ";
+    d2.displaydata();
+    d1 = d2;
+    cout<<endl<<"The value of Second overwrites one = ";
+    d1.displaydata();
+    return 0;
+ }
